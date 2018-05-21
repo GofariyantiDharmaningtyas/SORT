@@ -42,3 +42,30 @@ int bubble(){
 	}
 	return 0;
 }
+int select(){
+	int n,i,j,imaks,tmp,L[10];
+	cout<<"Banyak elemen: ";
+    cin>>n;
+    cout<<"Masukkan elemen: \n";
+    for(i=0;i<n;i++)
+    {
+        cin>>L[i];
+    }
+	for(int i=10-1;i>0;i--){
+		imaks=0;
+		for(int j=1;j<=i;j++){
+			if (L[j]<L[imaks]){
+			imaks=j;
+		}
+	}
+	tmp=L[imaks];
+	L[imaks]=L[i];
+	L[i]=tmp;
+}	
+cout<<"Hasil selection sort: ";
+ for(int i=0; i<n; i++)
+ {
+  cout<<" "<<L[i];
+ }
+ return 0;
+}
