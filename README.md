@@ -1,4 +1,4 @@
-// DESRIZAL DWI AYU 17170510
+// DESRIZAL DWI AYU 1717051019
 // ALIFIA INTAN A.N. 1717051028
 // GOFARIYANTI DHARMANINGTYAS 1717051048
 // TARI TRINATHA 1717051058
@@ -68,4 +68,45 @@ cout<<"Hasil selection sort: ";
   cout<<" "<<L[i];
  }
  return 0;
+}
+void merge(int *a, int low, int high, int mid){
+	int i,j,k,tmp[high-low+1];
+	i=low;
+	j=mid+1;
+	k=0;
+	while (i<=mid && j<=high){
+		if (a[i]<a[j]){
+			tmp[k]=a[i];
+			k++;
+			i++;
+		}
+		else{
+			tmp[k]=a[j];
+			k++;
+			j++;
+		}
+	}
+	while (i <= mid){
+		tmp[k] = a[i];
+		k++;
+		i++;
+	}
+	while (j <= high){
+		tmp[k] = a[j];
+		k++;
+		j++;
+	}
+	for (i=low; i<=high; i++){
+		a[i] = tmp[i-low];
+	}
+}
+ 
+void sort(int *a, int low, int high){
+	int mid;
+	if (low<high){
+		mid=(low+high)/2;
+		sort(a,low,mid);
+		sort(a,mid+1,high);
+		merge(a,low,high,mid);
+	}
 }
