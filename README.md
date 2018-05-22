@@ -110,3 +110,37 @@ void sort(int *a, int low, int high){
 		merge(a,low,high,mid);
 	}
 }
+int mergee(){
+	int n;
+	cout<<"Banyak Integer :";
+	cin>>n;
+	int bil[n];
+	for(int i=0; i<n; i++){
+		cout<<"Bil ke-"<<i+1<<"= ";
+		cin>>bil[i];
+	}
+	sort(bil, 0, n-1);
+	cout<<"\nHasil :\n";
+	for (int i=0; i<n; i++){
+        cout<<"  "<<bil[i];
+    }
+	return 0;
+}
+
+int main(){
+	int menu;
+	cout<<"1. Bubble Sort\n2. Selection Sort\n3. Merge Sort\n Pilih 1/2/3 . . . ";
+	cin>>menu;
+	switch(menu){
+		case 1:
+			bubble();
+			break;
+		case 2:
+			select();
+			break;
+		case 3:
+			mergee();
+			break;
+		}
+	return 0;
+}
